@@ -5,6 +5,7 @@ import { GetFetchUsers } from '@/utils/fetch/User'
 
 const page = async () => {
   const user = await GetFetchUsers()
+  
   const pageval = 15
   return (
     <div className='w-full h-screen bg-slate-100 p-4 flex-col justify-center'>
