@@ -3,15 +3,12 @@ import { NextResponse } from "next/server";
 
 export async function GET(req, res) {
 
-  const races = await prisma.Race.findMany({
-    include : {animal: true}
-  });
+    const race = await prisma.Race.findMany({
+        include : {animal: true}
+    });
 
-  if (!races || races.length === 0) {
-      return NextResponse.json({ races: [] }, { status: 200 })
-  }
-
-  return NextResponse.json({ races }, { status: 200 })
+    return NextResponse.json(race)
+    
 }
 
 export async function POST(req,res) {
@@ -24,5 +21,5 @@ export async function POST(req,res) {
     });
 
     console.log("ma race envoiée : ",newRace)
-    return NextResponse.json({message : "Race envoyer"})
+    return NextResponse.json("send")
 }

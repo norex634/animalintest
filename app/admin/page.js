@@ -1,5 +1,4 @@
 import React from 'react'
-import SideAdmin from '@/components/partials/SideAdmin'
 
 const page = () => {
   return (

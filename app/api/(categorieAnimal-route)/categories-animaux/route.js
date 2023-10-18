@@ -8,11 +8,8 @@ export async function GET(req, res) {
         include : {animal: true}
     });
 
-    if (!categoriesAnimaux || categoriesAnimaux.length === 0) {
-        return NextResponse.json({ categoriesAnimaux: [] }, { status: 200 })
-    }
-
-    return NextResponse.json({ categoriesAnimaux }, { status: 200 })
+    return NextResponse.json(categoriesAnimaux)
+    
 }
 
 export async function POST(req) {
@@ -28,5 +25,5 @@ export async function POST(req) {
     });
     
     console.log("ma categorie envoiée : ",newCategorie)
-    return NextResponse.json({message : "Categorie envoyer"})
+    return NextResponse.json("send")
 }

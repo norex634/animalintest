@@ -7,27 +7,27 @@ import path from "path";
 import { v4 as uuidv4} from 'uuid';
 import fs from "fs";
 
-
 export async function GET(req, res) {
 
-  const animaux = await prisma.Animal.findMany({
-    include : {
-    categorie: true, 
-    sexe: true, 
-    race: true, 
-    image: true
-}});
+    const animaux = await prisma.Animal.findMany({
+        include : {
+            categorie: true, 
+            sexe: true, 
+            race: true, 
+            image: true
+        }
+    });
 
-  if (!animaux || animaux.length === 0) {
-      return NextResponse.json({ animaux: [] }, { status: 200 })
-  }
-
-  return NextResponse.json({ animaux }, { status: 200 })
+    return NextResponse.json(animaux)
+    
 }
+
 
 export async function POST(req, res) {
       
     const data = await req.formData()
+    
+    
     const DataAnimal = data.getAll("data")
     
       const files = data.getAll("files")
@@ -97,6 +97,6 @@ export async function POST(req, res) {
       },
     );
 
-    return NextResponse.json({message : "Animal envoyer"})
+    return NextResponse.json(newAnimal)
   
 }
