@@ -1,6 +1,8 @@
 export const GetFetchCompagnies = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/companies`);
+    const response = await fetch(`${process.env.BASE_URL}/api/companies`,{
+      cache: 'no-cache',
+    });
     
     if (!response.ok) {
       throw new Error(`La requête a échoué avec un statut ${response.status}`);
@@ -16,7 +18,7 @@ export const GetFetchCompagnies = async () => {
 
 export const GetFetchCompagnie1 = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/companie`);
+    const response = await fetch(`/api/companie`);
     
     if (!response.ok) {
       throw new Error(`La requête a échoué avec un statut ${response.status}`);

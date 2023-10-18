@@ -10,3 +10,19 @@ export async function GET(req, res) {
     return NextResponse.json(faq)
     
 }
+
+export async function POST(req, res) {
+
+    const { question, reponse, link } = await req.json();
+
+    const newFaq = await prisma.faq.create({
+      data: {
+        question: question,
+        reponse: reponse,
+        link: link,
+      },
+    });
+
+    console.log("ma faq envoiée : ",newFaq)
+    return NextResponse.json("send")
+  }

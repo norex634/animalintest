@@ -13,7 +13,7 @@ import {
 import Link from "next/link"
 
 // This type is used to define the shape of our data.
-export const columnsUser = [
+export const columns = [
   {
     accessorKey: "nom",
     header: ({ column }) => {

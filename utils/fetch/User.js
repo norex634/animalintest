@@ -1,6 +1,8 @@
 export const GetFetchUsers = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/users`);
+    const response = await fetch(`${process.env.BASE_URL}/api/users`,{
+      cache: 'no-cache',
+    });
     
     if (!response.ok) {
       throw new Error(`Fetch request failed with status ${response.status}`);
