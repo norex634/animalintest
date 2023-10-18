@@ -5,9 +5,9 @@ export async function GET(req, res) {
     try {
         const users = await prisma.user.findMany();
         console.log("AVANT le if user : ",users)
-        // if (!users || users.length === 0) {
-        //     return NextResponse.json({ users: [] }, { status: 200 });
-        // }
+        if (!users || users.length === 0) {
+            return NextResponse.json({ users: [] }, { status: 200 });
+        }
         console.log("apres le if user : ",users)
         return NextResponse.json({ users }, { status: 200 });
     } catch (error) {
