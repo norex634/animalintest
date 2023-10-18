@@ -4,7 +4,7 @@ import React from 'react'
 import { GetFetchUsers } from '@/utils/fetch/User'
 
 const page = async () => {
-  const {users} = await GetFetchUsers()
+  const users = await GetFetchUsers()
   console.log(users)
   const pageval = 15
   return (
