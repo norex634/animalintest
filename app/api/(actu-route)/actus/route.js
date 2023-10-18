@@ -11,7 +11,6 @@ export async function GET(req, res) {
     });
 
     return NextResponse.json(actus)
-    
 }
 
 export async function POST(req, res) {
