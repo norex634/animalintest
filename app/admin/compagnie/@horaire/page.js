@@ -1,6 +1,5 @@
 import React from 'react'
-import { GetFetchCompagnie1 } from '@/utils/fetch/compagnie';
-
+import { GetFetchCompagnie1 } from '@/utils/fetch/Compagnie';
 
 const page = async () => {
   const {compagnie} = await GetFetchCompagnie1();

@@ -1,5 +1,6 @@
 import React from 'react'
-import { GetFetchCompagnie1 } from '@/utils/fetch/compagnie';
+import { GetFetchCompagnie1 } from '@/utils/fetch/Compagnie';
+
 import Image from 'next/image'
 // import { DataTable } from '@/components/elements/table/DataTable'
 // import { columns } from '@/components/elements/table/Columns'
