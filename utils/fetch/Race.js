@@ -1,6 +1,6 @@
 export const GetFetchRaces = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/races`,{
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/races`,{
       cache: 'no-cache',
     });
     if (!response.ok) {

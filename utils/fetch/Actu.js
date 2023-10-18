@@ -1,6 +1,6 @@
 export const GetFetchActus = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/actus`,{
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/actus`,{
       cache: 'no-cache',
     });
     if (!response.ok) {

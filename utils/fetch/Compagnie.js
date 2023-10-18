@@ -1,7 +1,7 @@
 
 export const GetFetchCompagnie1 = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/compagnie`,{
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/compagnie`,{
       cache: 'no-cache',
     });
     

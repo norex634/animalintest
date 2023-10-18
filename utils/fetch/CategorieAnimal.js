@@ -1,6 +1,6 @@
 export const GetFetchCategorieAnimaux = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/categories-animaux`,{
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/categories-animaux`,{
       cache: 'no-cache',
     });
     if (!response.ok) {

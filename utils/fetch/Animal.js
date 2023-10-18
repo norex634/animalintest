@@ -1,6 +1,6 @@
 export const GetFetchAnimaux = async () => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/api/animaux`,{
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/animaux`,{
       cache: 'no-cache',
     });
 
