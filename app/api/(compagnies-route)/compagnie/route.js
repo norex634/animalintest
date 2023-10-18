@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function GET(req, res) {
     try {
         const compagnie = await prisma.compagnie.findFirst({
-            include: { social: true, horaire: true },
+            include: { social: true, horaire: true }
         });
 
         if (!compagnie) {
