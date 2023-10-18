@@ -9,6 +9,5 @@ export const GetFetchUsers = async () => {
     return await response.json();
   } catch (error) {
     console.error(error);
-    throw error;
   }
 };

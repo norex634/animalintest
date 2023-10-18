@@ -13,6 +13,5 @@ export const GetFetchCompagnie1 = async () => {
 
   } catch (error) {
     console.log(error);
-    throw error;
   }
 };
