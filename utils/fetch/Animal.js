@@ -3,13 +3,18 @@ export const GetFetchAnimaux = async () => {
     const response = await fetch(`${process.env.BASE_URL}/api/animaux`,{
       cache: 'no-cache',
     });
-    
+
     if (!response.ok) {
       throw new Error(`La requête a échoué avec un statut ${response.status}`);
     }
+    return await response.json();
+    // if(response.status === 200){
 
-    const data = await response.json();
-    return data;
+    //   return await response.json();
+      
+    // }else{
+    //   throw new Error(`La requête a échoué avec un statut ${response.status}`);
+    // }
   } catch (error) {
     console.log(error);
     throw error;

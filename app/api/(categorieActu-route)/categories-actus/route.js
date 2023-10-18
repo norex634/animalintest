@@ -4,12 +4,15 @@ import slugify from "slugify";
 
 export async function GET(req, res) {
 
-    const categoriesActus = await prisma.CategorieActu.findMany({
-        include : {actu: true}
-    });
+  const categoriesActus = await prisma.CategorieActu.findMany({
+    include : {actu: true}
+  });
 
-    return NextResponse.json(categoriesActus)
-    
+  if (!categoriesActus || categoriesActus.length === 0) {
+      return NextResponse.json({ categoriesActus: [] }, { status: 200 })
+  }
+
+  return NextResponse.json({ categoriesActus }, { status: 200 })
 }
 
 export async function POST(req, res) {
@@ -25,6 +28,6 @@ export async function POST(req, res) {
     });
 
     console.log("ma catégorie actu envoiée : ",newCategorieActu)
-    return NextResponse.json("send")
+    return NextResponse.json({message : "Categorie envoyer"})
 
   }

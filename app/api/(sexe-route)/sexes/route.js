@@ -1,12 +1,16 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
+
 export async function GET(req, res) {
 
-    const sexe = await prisma.Sexe.findMany({
+    const sexes = await prisma.Sexe.findMany({
         include : {animal: true}
     });
 
-    return NextResponse.json(sexe)
-    
+    if (!sexes || sexes.length === 0) {
+        return NextResponse.json({ sexes: [] }, { status: 200 })
+    }
+
+    return NextResponse.json({ sexes }, { status: 200 })
 }

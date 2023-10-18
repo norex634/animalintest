@@ -3,12 +3,13 @@ import { NextResponse } from "next/server";
 
 export async function GET(req, res) {
 
-    const faq = await prisma.Faq.findMany({
+  const faqs = await prisma.Faq.findMany({});
 
-    });
+  if (!faqs || faqs.length === 0) {
+      return NextResponse.json({ faqs: [] }, { status: 200 })
+  }
 
-    return NextResponse.json(faq)
-    
+  return NextResponse.json({ faqs }, { status: 200 })
 }
 
 export async function POST(req, res) {
@@ -24,5 +25,5 @@ export async function POST(req, res) {
     });
 
     console.log("ma faq envoiée : ",newFaq)
-    return NextResponse.json("send")
+    return NextResponse.json({message : "Faq envoyer"})
   }

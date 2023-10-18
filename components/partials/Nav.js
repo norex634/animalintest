@@ -1,6 +1,6 @@
 
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import GetFetchCompagnie1 from '../../utils/fetch/Compagnie'
+import GetFetchCompagnie1 from '../../utils/fetch/compagnie'
 import { SlSocialInstagram, SlSocialFacebook, SlGhost } from "react-icons/sl";
 import Link from 'next/link'
 

@@ -3,13 +3,10 @@ export const GetFetchActus = async () => {
     const response = await fetch(`${process.env.BASE_URL}/api/actus`,{
       cache: 'no-cache',
     });
-    
     if (!response.ok) {
       throw new Error(`La requête a échoué avec un statut ${response.status}`);
     }
-
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.log(error);
     throw error;
@@ -26,7 +23,7 @@ export const PostActu = async (data) => {
       body: JSON.stringify(data),
     });
 
-    if (response.status === 201) {
+    if (response.status === 200) {
       // La création a réussi, vous pouvez gérer la réponse ici
       const responseData = await response.json();
       return responseData;
