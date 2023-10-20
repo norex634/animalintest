@@ -3,12 +3,13 @@ import { NextResponse } from "next/server";
 
 export async function GET(req, res) {
 
-    const race = await prisma.Race.findMany({
+    const races = await prisma.Race.findMany({
         include : {animal: true}
     });
-
-    return NextResponse.json(race)
-    
+    if (!races) {
+      return NextResponse.json({ races: [] }, { status: 200 });
+    }
+    return NextResponse.json( races , { status: 200 });
 }
 
 export async function POST(req,res) {

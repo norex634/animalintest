@@ -7,9 +7,10 @@ export async function GET(req, res) {
     const categoriesAnimaux = await prisma.CategorieAnimal.findMany({
         include : {animal: true}
     });
-
-    return NextResponse.json(categoriesAnimaux)
-    
+    if (!categoriesAnimaux) {
+        return NextResponse.json({ categoriesAnimaux: [] }, { status: 200 });
+    }
+    return NextResponse.json( categoriesAnimaux , { status: 200 });
 }
 
 export async function POST(req) {

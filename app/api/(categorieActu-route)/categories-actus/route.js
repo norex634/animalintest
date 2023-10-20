@@ -7,8 +7,10 @@ export async function GET(req, res) {
     const categoriesActus = await prisma.CategorieActu.findMany({
         include : {actu: true}
     });
-
-    return NextResponse.json(categoriesActus)
+    if (!categoriesActus) {
+      return NextResponse.json({ categoriesActus: [] }, { status: 200 });
+    }
+    return NextResponse.json( categoriesActus , { status: 200 });
     
 }
 

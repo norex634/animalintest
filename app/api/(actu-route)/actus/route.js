@@ -9,8 +9,10 @@ export async function GET(req, res) {
             categorie: true, 
         }
     });
-
-    return NextResponse.json(actus)
+    if (!actus) {
+      return NextResponse.json({ actus: [] }, { status: 200 });
+    }
+    return NextResponse.json( actus , { status: 200 });
     
 }
 

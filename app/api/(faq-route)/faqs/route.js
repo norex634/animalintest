@@ -2,13 +2,16 @@ import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 export async function GET(req, res) {
-
-    const faq = await prisma.Faq.findMany({
-
-    });
-
-    return NextResponse.json(faq)
-    
+    try{
+      const faqs = await prisma.Faq.findMany({});
+      if (!faqs) {
+        return NextResponse.json({ faqs: [] }, { status: 200 });
+      }
+      return NextResponse.json( faqs , { status: 200 });
+    }catch(error){
+      console.error("Une erreur s'est produite lors de la récupération des faq:", error);
+      return NextResponse.error("Erreur lors de la récupération des faq", { status: 500 });
+    }
 }
 
 export async function POST(req, res) {

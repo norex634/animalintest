@@ -18,7 +18,10 @@ export async function GET(req, res) {
         }
     });
 
-    return NextResponse.json(animaux)
+    if (!animaux) {
+      return NextResponse.json({ animaux: [] }, { status: 200 });
+    }
+    return NextResponse.json( animaux , { status: 200 });
     
 }
 
