@@ -1,13 +1,12 @@
 
 import { GetFetchCompagnie1 } from '@/utils/fetch/Compagnie';
 
-const page = async () => {
+const CompagniePageHoraire = async () => {
   const {compagnie} = await GetFetchCompagnie1();
   console.log(compagnie)
 
   return (
     <div className='w-full h-[50%] bg-slate-600 p-4'>
-      {console.log(compagnie)}
       <h1>Nom de la compagnie : {compagnie.nom}</h1>
       <h1>Horaire : </h1>
       {compagnie.horaire.map((horaire)=> (
@@ -22,4 +21,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default CompagniePageHoraire
