@@ -1,27 +1,10 @@
 
-// import React, { useEffect, useState } from 'react';
 import { GetFetchCompagnie1 } from '@/utils/fetch/Compagnie';
 
-const CompagniePage = async () => {
+const page = async () => {
   const {compagnie} = await GetFetchCompagnie1();
-  // console.log(compagnie)
-  // const [compagnie, setCompagnie] = useState([]);
-  // const [loading, isLoading] = useState(false);
+  console.log(compagnie)
 
-  // useEffect(() => {
-  //   async function fetchCompagnie() {
-  //     isLoading(true)
-  //     try {
-  //       const { compagnie } = await GetFetchCompagnie1();
-  //       setCompagnie(compagnie);
-  //       isLoading(false)
-  //     } catch (error) {
-  //       console.error('Erreur lors de la récupération de la compagnie :', error);
-  //     }
-  //   }
-  //   fetchCompagnie();
-
-  // }, []);
   return (
     <div className='w-full h-[50%] bg-slate-600 p-4'>
       {console.log(compagnie)}
@@ -39,4 +22,4 @@ const CompagniePage = async () => {
   )
 }
 
-export default CompagniePage
+export default page
