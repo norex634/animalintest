@@ -37,13 +37,13 @@ export async function POST(req, res) {
       const files = data.getAll("files")
       console.log(files)
 
-      const multipleBuffersPromise = files.map((file) => (
+      const multipleBuffersPromise = files.map(file => (
         file.arrayBuffer()
-          .then((data) => {
+          .then(data => {
             const buffer = Buffer.from(data);
             const name = uuidv4();
             const ext = file.type.split("/")[1];
-            const tempdir = (os.tmpdir());
+            const tempdir = os.tmpdir();
             console.log('tempdir :',tempdir)
             const uploadDir = path.join(tempdir, `/${name}.${ext}`)
             console.log(uploadDir)
@@ -56,8 +56,8 @@ export async function POST(req, res) {
             })
             return {filepath: uploadDir, filename: file.name}
           })
-      ));
-      const allBuffer =  await Promise.all(multipleBuffersPromise)
+          ))
+          const allBuffer =  await Promise.all(multipleBuffersPromise)
       console.log(allBuffer)
       
     const photos = await UploadImage(allBuffer)
