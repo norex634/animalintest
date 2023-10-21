@@ -4,7 +4,7 @@ import { columns} from '@/components/table/ColumnsUser'
 import { GetFetchUsers } from '@/utils/fetch/User'
 
 const page = async () => {
-  const users = await GetFetchUsers()
+  const {users} = await GetFetchUsers()
   //const user = await GetFetchUsers()
    console.log("users destructurerr : ",users)
   //console.log("user non destructurer : ",user)
