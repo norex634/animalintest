@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { GetFetchCompagnie1 } from '@/utils/fetch/Compagnie';
 
-const page = () => {
+const CompagniePage = () => {
   //const {compagnie} = await GetFetchCompagnie1();
   // console.log(compagnie)
   const [compagnie, setCompagnie] = useState([]);
