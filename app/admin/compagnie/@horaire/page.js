@@ -3,7 +3,7 @@ import { GetFetchCompagnie1 } from '@/utils/fetch/Compagnie';
 
 const page = async () => {
   const {compagnie} = await GetFetchCompagnie1();
-  console.log(compagnie)
+  // console.log(compagnie)
   return (
     
     <div className='w-full h-[50%] bg-slate-600 p-4'>
