@@ -21,8 +21,7 @@ const AnimalPage = async () => {
     <div className='w-full h-full bg-slate-100 p-4 flex-col justify-center'>
       <h1 className='bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium text-center'>Tous les animaux</h1>
       <div className=" flex w-full  ">
-      {/* <DataTable columns={columnsAnimal} data={animal} totalPage={totalPageAnimal} value={`animal`} /> */}
-      <DataTable columns={columns} data={animaux} pageval={pageval} race={races} sexe={sexes} categorie={categoriesAnimaux}/>
+      {/* <DataTable columns={columns} data={animaux} pageval={pageval} race={races} sexe={sexes} categorie={categoriesAnimaux}/> */}
 
       </div>
     </div>
