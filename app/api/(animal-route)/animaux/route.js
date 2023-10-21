@@ -105,7 +105,7 @@ export async function POST(req, res) {
         },
       },
     );
-
+console.log(newAnimal)
     return NextResponse.json(newAnimal)
   
 }
