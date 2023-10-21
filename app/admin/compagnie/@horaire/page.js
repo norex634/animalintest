@@ -37,4 +37,4 @@ const CompagniePage = () => {
   )
 }
 
-export default page
+export default CompagniePage
