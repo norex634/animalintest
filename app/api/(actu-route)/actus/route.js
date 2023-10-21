@@ -12,7 +12,7 @@ export async function GET(req, res) {
     if (!actus) {
       return NextResponse.json({ actus: [] }, { status: 200 });
     }
-    return NextResponse.json( actus , { status: 200 });
+    return NextResponse.json( {actus} , { status: 200 });
     
 }
 

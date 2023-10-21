@@ -10,7 +10,7 @@ export async function GET(req, res) {
     if (!categoriesActus) {
       return NextResponse.json({ categoriesActus: [] }, { status: 200 });
     }
-    return NextResponse.json( categoriesActus , { status: 200 });
+    return NextResponse.json( {categoriesActus} , { status: 200 });
     
 }
 
