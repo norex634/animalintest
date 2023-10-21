@@ -29,11 +29,14 @@ export async function GET(req, res) {
 export async function POST(req, res) {
       
     const data = await req.formData()
-    
+    console.log(data)
     
     const DataAnimal = data.getAll("data")
-    
+    console.log(DataAnimal)
+
       const files = data.getAll("files")
+      console.log(files)
+
       const multipleBuffersPromise = files.map((file) => (
         file.arrayBuffer()
           .then((data) => {
@@ -43,6 +46,7 @@ export async function POST(req, res) {
             const tempdir = (os.tmpdir());
             console.log('tempdir :',tempdir)
             const uploadDir = path.join(tempdir, `/${name}.${ext}`)
+            console.log(uploadDir)
             fs.writeFile(uploadDir, buffer,(err) => {
               if(err) {
                 console.log(err)
@@ -54,8 +58,10 @@ export async function POST(req, res) {
           })
       ));
       const allBuffer =  await Promise.all(multipleBuffersPromise)
+      console.log(allBuffer)
       
     const photos = await UploadImage(allBuffer)
+    console.log(photos)
     const infoImg = []
     photos.map((photo) => {
       infoImg.push({
