@@ -4,9 +4,7 @@ import { GetFetchCompagnie1 } from '@/utils/fetch/Compagnie';
 
 
  
-const Layoutside = async ( {info,horaire,social} ) => {
- 
-  const {compagnie} = await GetFetchCompagnie1();
+const Layoutside = async ({info,horaire,social} ) => {
   return (
     <>
       <main className="flex min-h-screen w-full">
