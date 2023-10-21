@@ -9,7 +9,7 @@ export async function GET(req, res) {
     if (!races) {
       return NextResponse.json({ races: [] }, { status: 200 });
     }
-    return NextResponse.json( races , { status: 200 });
+    return NextResponse.json( {races} , { status: 200 });
 }
 
 export async function POST(req,res) {

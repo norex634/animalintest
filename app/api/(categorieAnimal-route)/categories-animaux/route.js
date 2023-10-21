@@ -10,7 +10,7 @@ export async function GET(req, res) {
     if (!categoriesAnimaux) {
         return NextResponse.json({ categoriesAnimaux: [] }, { status: 200 });
     }
-    return NextResponse.json( categoriesAnimaux , { status: 200 });
+    return NextResponse.json( {categoriesAnimaux} , { status: 200 });
 }
 
 export async function POST(req) {

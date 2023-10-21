@@ -21,7 +21,7 @@ export async function GET(req, res) {
     if (!animaux) {
       return NextResponse.json({ animaux: [] }, { status: 200 });
     }
-    return NextResponse.json( animaux , { status: 200 });
+    return NextResponse.json( {animaux} , { status: 200 });
     
 }
 
