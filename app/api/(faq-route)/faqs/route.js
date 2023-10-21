@@ -7,7 +7,7 @@ export async function GET(req, res) {
       if (!faqs) {
         return NextResponse.json({ faqs: [] }, { status: 200 });
       }
-      return NextResponse.json( faqs , { status: 200 });
+      return NextResponse.json( {faqs} , { status: 200 });
     }catch(error){
       console.error("Une erreur s'est produite lors de la récupération des faq:", error);
       return NextResponse.error("Erreur lors de la récupération des faq", { status: 500 });
