@@ -3,7 +3,7 @@ import { DataTable } from '@/components/table/DataTableUser'
 import { columns} from '@/components/table/ColumnsUser'
 import { GetFetchUsers } from '@/utils/fetch/User'
 
-const page = async () => {
+const UserPage = async () => {
   const {users} = await GetFetchUsers()
   //const user = await GetFetchUsers()
   //  console.log("users destructurerr : ",users)
@@ -22,4 +22,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default UserPage

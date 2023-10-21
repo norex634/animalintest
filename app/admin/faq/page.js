@@ -4,7 +4,7 @@ import { columns } from '@/components/table/ColumnsFaq'
 import { GetFetchFaqs } from '@/utils/fetch/Faq'
 
 
-const page = async () => {
+const FaqPage = async () => {
   const {faqs} = await GetFetchFaqs()
   const pageval = 10
   return (
@@ -22,4 +22,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default FaqPage
