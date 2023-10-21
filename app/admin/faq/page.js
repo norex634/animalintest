@@ -6,7 +6,6 @@ import { GetFetchFaqs } from '@/utils/fetch/Faq'
 
 const page = async () => {
   const {faqs} = await GetFetchFaqs()
-  console.log(faqs)
   const pageval = 10
   return (
     <>
