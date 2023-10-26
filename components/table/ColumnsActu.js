@@ -28,7 +28,6 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
-import { ModifActu } from "./ModifActu"
 
 
 export const Columns = [
