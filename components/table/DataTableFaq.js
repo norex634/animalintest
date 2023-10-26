@@ -119,7 +119,7 @@ export function DataTable({
 
     <div className="flex flex-col w-full">
       <div className="flex justify-between">
-        <div className="flex py-4">
+        <div className="flex py-2">
           {/* Champ de filtrage par titre */}
           <Input
             placeholder="Filtrer par question..."
@@ -130,11 +130,11 @@ export function DataTable({
             className="max-w-sm"
           />
         </div>
-        <div className="py-6 bg">
+        <div className="py-2 bg">
           {/* Boîte de dialogue pour ajouter une nouvelle actualité */}
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline">Ajouter</Button>
+            <Button className="text-[#ffffff] bg-[#222222] hover:bg-[#28ccac] hover:text-[#ffffff]" variant="outline">Ajouter</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>

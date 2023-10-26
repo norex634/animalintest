@@ -30,3 +30,27 @@ export async function POST(req, res) {
     return NextResponse.json("send")
 
   }
+
+  export async function PATCH(req, res) {
+  
+    const {nom, catid}  = await req.json();
+    
+      const PatchCategorieActu = await prisma.CategorieActu.update({
+        where: {
+          id : catid
+        },
+        data: {
+          nom: nom,
+          slug : slugify(nom, {lower: true}),
+          img: "www.monimage.com",
+        },
+      });
+  
+      console.log("ma catégorie actu envoiée : ",PatchCategorieActu)
+      return NextResponse.json("send")
+  
+    }
+
+
+
+ 

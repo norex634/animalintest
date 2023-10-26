@@ -9,11 +9,14 @@ const FaqPage = async () => {
   const pageval = 10
   return (
     <>
-    <div className='w-full h-screen bg-slate-100 p-4 flex-col justify-center'>
-      <h1 className='bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium text-center'>Tous les actus</h1>
-      <div className=" flex w-full h-[50%] ">
+    <div className='w-full flex-col justify-center'>
+      <div className="bg-[#ffffff] p-4 rounded-[20px] text-[#222222] shadow-lg" >
+      <h1 className="text-[1.5em] font-semibold">Liste des FAQ</h1>
+      <div className=" flex flex-col w-full text-[#222222] ">
+       
       <DataTable columns={columns} data={faqs} pageval={pageval} />
-
+      </div>
+        
       
       </div>
 

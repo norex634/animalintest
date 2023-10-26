@@ -56,7 +56,7 @@ export async function POST(req, res) {
             })
             return {filepath: uploadDir, filename: file.name}
           })
-          ))
+          ));
           const allBuffer =  await Promise.all(multipleBuffersPromise)
       console.log(allBuffer)
       

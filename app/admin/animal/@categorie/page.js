@@ -7,10 +7,18 @@ const AnimalPageCategorie = async ({}) => {
   const {categoriesAnimaux} = await GetFetchCategorieAnimaux()
   const pageval= 3
   return (
-    <div className='w-full bg-slate-100 p-4'>
-      <h1 className='bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium text-center'>categorie</h1>
+    
+    <div className='w-full flex-col justify-center'>
+      <div className="bg-[#ffffff] p-4 rounded-[20px] text-[#222222] shadow-lg" >
+      <h1 className="text-[1.5em] font-semibold">Liste des catégorie</h1>
+      <div className=" flex flex-col w-full text-[#222222] ">
+       
+      <DataTable columns={columns} data={categoriesAnimaux} pageval={pageval} />
+      </div>
+        
       
-    <DataTable columns={columns} data={categoriesAnimaux} pageval={pageval} />
+      </div>
+
     </div>
   )
 }

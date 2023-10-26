@@ -116,7 +116,7 @@ export function DataTable({
   return (
     <div className="flex flex-col w-full">
       <div className="flex justify-between">
-        <div className="flex py-4">
+        <div className="flex pt-2">
           {/* Champ de filtrage par nom */}
           <Input
             placeholder="Filtrer par nom..."
@@ -127,13 +127,13 @@ export function DataTable({
             className="max-w-sm"
           />
         </div>
-        <div className="py-6 bg">
+        <div className="p-2 bg">
           {/* Boîte de dialogue pour ajouter une nouvelle catégorie actu */}
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline">Ajouter</Button>
+              <Button className="text-[#ffffff] bg-[#222222] hover:bg-[#28ccac] hover:text-[#ffffff]" variant="outline">Ajouter</Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[425px] ">
               <DialogHeader>
                 <DialogTitle>Nouvelles catégorie</DialogTitle>
               </DialogHeader>
@@ -224,10 +224,10 @@ export function DataTable({
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-center px-2 mt-2">
+      <div className="flex items-center justify-center px-2 mt-2 ">
         <div className="flex items-center space-x-6 lg:space-x-8">
           <div className="flex items-center space-x-2">
-            <p className="text-sm font-medium">Éléments par page</p>
+            <p className="text-sm font-medium ">Éléments par page</p>
             {/* Sélecteur pour le nombre d'éléments par page */}
             <Select
               value={`${table.getState().pagination.pageSize}`}
@@ -247,7 +247,7 @@ export function DataTable({
               </SelectContent>
             </Select>
           </div>
-          <div className="flex w-[100px] items-center justify-center text-sm font-medium">
+          <div className="flex w-[100px] items-center justify-center text-sm font-medium ">
             {/* Affichage de la page actuelle et du nombre total de pages */}
             Page {table.getState().pagination.pageIndex + 1} sur{" "}
             {table.getPageCount()}
@@ -260,7 +260,7 @@ export function DataTable({
               disabled={!table.getCanPreviousPage()}
             >
               <span className="sr-only">Aller à la première page</span>
-              <DoubleArrowLeftIcon className="h-4 w-4" />
+              <DoubleArrowLeftIcon className="h-4 w-4 text-[#121417]" />
             </Button>
             <Button
               variant="outline"

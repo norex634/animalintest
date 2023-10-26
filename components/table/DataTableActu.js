@@ -61,8 +61,9 @@ export function DataTable({
   columns,
   data,
   pageval,
-  categorieactu
+  categorieactu,
 }) {
+
 
   // Gestion du filtrage
   const [columnFilters, setColumnFilters] = React.useState([])
@@ -74,6 +75,7 @@ export function DataTable({
   const [selectedCategoryId, setSelectedCategoryId] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const router = useRouter()
+
 
   // Fonction pour gérer le clic sur le bouton "Ajouter"
   async function buttonClick() {
@@ -117,8 +119,9 @@ export function DataTable({
 
   return (
     <div className="flex flex-col w-full">
+      
       <div className="flex justify-between">
-        <div className="flex py-4">
+        <div className="flex pt-2">
           {/* Champ de filtrage par titre */}
           <Input
             placeholder="Filtrer par titre..."
@@ -129,11 +132,11 @@ export function DataTable({
             className="max-w-sm"
           />
         </div>
-        <div className="py-6 bg">
+        <div className="p-2 bg">
           {/* Boîte de dialogue pour ajouter une nouvelle actualité */}
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline">Ajouter</Button>
+              <Button className="text-[#ffffff] bg-[#222222] hover:bg-[#28ccac] hover:text-[#ffffff]" variant="outline">Ajouter</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
@@ -190,8 +193,18 @@ export function DataTable({
               </DialogFooter>
             </DialogContent>
           </Dialog>
+          
+          
+
         </div>
-      </div>
+
+        
+        </div>
+
+        
+
+
+      
       <div className="rounded-md border">
         <Table>
           {/* En-tête du tableau */}
@@ -226,6 +239,7 @@ export function DataTable({
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
+                  
                 </TableRow>
               ))
             ) : (

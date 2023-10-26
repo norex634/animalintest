@@ -29,3 +29,22 @@ export async function POST(req, res) {
     console.log("ma faq envoiée : ",newFaq)
     return NextResponse.json("send")
   }
+
+  export async function PATCH(req, res) {
+
+    const { question, reponse, link, faqId } = await req.json();
+
+    const patchFaq = await prisma.faq.update({
+      where: {
+        id : faqId
+      },
+      data: {
+        question: question,
+        reponse: reponse,
+        link: link,
+      },
+    });
+
+    console.log("ma faq envoiée : ",patchFaq)
+    return NextResponse.json("send")
+  }

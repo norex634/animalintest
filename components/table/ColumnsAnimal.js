@@ -62,29 +62,34 @@ export const columns = [
   {
     id: "action",
     cell: ({row}) => {
-      const animal = row.original
-      const animalName = animal.nom
-      const animalId = animal.id.toString()
+      const animalRow = row.original
+      const animalName = animalRow.nom
+      const animalId = animalRow.id.toString()
       
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button varian='ghost'className="h-8 w-8 p-0 bg-slate-100 hover:bg-slate-200">
-             <MoreHorizontal className="h-4 w-4 text-gray-700" />
+            <Button varian='ghost'className="h-8 w-8 p-0 bg-[#222222] text-[#ffffff] hover:bg-[#28ccac] ">
+             <MoreHorizontal className="h-4 w-4 " />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-          <DropdownMenuLabel>action</DropdownMenuLabel>
-          <DropdownMenuItem
-          onClick={()=>{
-            navigator.clipboard.writeText(animalName.toString())
-          }}
-          >
-            copy animal name
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href={`/admin/modif/animal/${animalId}`}>Modifier</Link>
-          </DropdownMenuItem>
+          <button
+              onClick={()=>{
+                navigator.clipboard.writeText(animalRow.nom)
+              }}
+              className=" h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white" 
+              variant="ghost">
+              copier nom 
+            </button>
+            <button
+              onClick={()=>{
+                navigator.clipboard.writeText(animalRow.nom)
+              }}
+              className=" h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white" 
+              variant="ghost">
+              Modifier 
+            </button>
           </DropdownMenuContent>
         </DropdownMenu>
       )

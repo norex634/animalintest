@@ -41,7 +41,18 @@ import {
   DoubleArrowLeftIcon,
   DoubleArrowRightIcon,
 } from "@radix-ui/react-icons"
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label"
+import { useRouter } from "next/navigation"
+import { PostUser } from "@/utils/fetch/User"
 
 
 
@@ -55,6 +66,33 @@ export function DataTable({
   //filter
   const [columnFilters, setColumnFilters] = React.useState([])
   const [sorting, setSorting] = React.useState([])
+
+  // État local pour les champs de titre, de texte et de catégorie
+  const [nom, setNom] = React.useState("Le nom de l'admin");
+  const [prenom, setPrenom] = React.useState("Le prenom de l'admin");
+  const [email, setEmail] = React.useState("L'email de l'admin");
+  const [password, setPassword] = React.useState("Le password de l'admin");
+  
+
+  const [open, setOpen] = React.useState(false);
+  const router = useRouter()
+
+    // Fonction pour gérer le clic sur le bouton "Ajouter"
+    async function buttonClick() {
+      if (nom) {
+        // Créez un objet data avec les valeurs du formulaire
+        const data = { nom: nom, prenom:prenom, email:email, password:password}
+        // Effectuez une requête POST à l'API
+        console.log(data)
+        await PostUser(data);
+        // Fermez la boîte de dialogue et actualisez la page
+        setOpen(false);
+        router.refresh()
+      } else {
+        // Affichez une alerte si tous les champs ne sont pas remplis
+        alert("Veuillez remplir tous les champs")
+      }
+    }
   
   const table = useReactTable({
     data,
@@ -83,16 +121,93 @@ export function DataTable({
   return (
 
     <div className="flex flex-col w-full">
-      <div className="flex items-center py-4">
-        <Input
-          placeholder="Filter email..."
-          value={(table.getColumn("email")?.getFilterValue()) ?? ""}
-          onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
-      </div>
+      <div className="flex justify-between">
+      <div className="flex pt-2">
+          {/* Champ de filtrage par nom */}
+          <Input
+            placeholder="Filtrer par email..."
+            value={(table.getColumn("email")?.getFilterValue()) ?? ""}
+            onChange={(event) =>
+              table.getColumn("email")?.setFilterValue(event.target.value)
+            }
+            className="max-w-sm"
+          />
+        </div>
+        
+      <div className="p-2 bg">
+          {/* Boîte de dialogue pour ajouter une nouvelle catégorie actu */}
+          <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger asChild>
+              <Button className="text-[#ffffff] bg-[#222222] hover:bg-[#28ccac] hover:text-[#ffffff]" variant="outline">Ajouter</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px] ">
+              <DialogHeader>
+                <DialogTitle>Nouvelle admin</DialogTitle>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="titre" className="text-right">
+                    Nom
+                  </Label>
+                  <Input
+                    id="name"
+                    defaultValue="Le nom de l'admin"
+                    onChange={(event) => setNom(event.target.value)}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="titre" className="text-right">
+                    Prenom
+                  </Label>
+                  <Input
+                    id="name"
+                    defaultValue="Le prenom de l'admin"
+                    onChange={(event) => setPrenom(event.target.value)}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="titre" className="text-right">
+                    Email
+                  </Label>
+                  <Input
+                    id="name"
+                    defaultValue="L'email de l'admin"
+                    onChange={(event) => setEmail(event.target.value)}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="titre" className="text-right">
+                    Password
+                  </Label>
+                  <Input
+                    type='password'
+                    id="name"
+                    defaultValue=""
+                    onChange={(event) => setPassword(event.target.value)}
+                    className="col-span-3"
+                  />
+                </div>
+                
+                
+              </div>
+              
+              
+              <DialogFooter>
+                {/* Bouton "Ajouter" dans la boîte de dialogue */}
+                <Button
+                  onClick={buttonClick}
+                  type="submit"
+                >
+                  Ajouter
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
+        </div>
     <div className="rounded-md border">
       <Table>
         <TableHeader>
@@ -142,7 +257,7 @@ export function DataTable({
 
     </div>
    
-    <div className="flex items-center justify-center px-2 mt-2">
+    <div className="flex items-center justify-center px-2 mt-2 text-[#121417]">
       
       <div className="flex items-center space-x-6 lg:space-x-8">
         <div className="flex items-center space-x-2">

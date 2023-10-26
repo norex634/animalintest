@@ -39,3 +39,30 @@ export const PostCategorieActu = async (data) => {
     throw error;
   }
 };
+
+export const PatchCategorieActu = async (data) => {
+  try {
+    const response = await fetch(`/api/categories-actus`, {
+      
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.status === 201) {
+      // La création a réussi, vous pouvez gérer la réponse ici
+      const responseData = await response.json();
+      return responseData;
+    // } else {
+    //   // Une erreur s'est produite lors de la création
+    //   const errorData = await response.json();
+    //   console.log('Erreur lors de la création de la catégorie d\'actualités :', errorData.message);
+    //   throw new Error('Erreur lors de la création de la catégorie d\'actualités : ' + errorData.message);
+    }
+  } catch (error) {
+    console.log('Erreur lors de la modification de la catégorie d\'actualités :', error.message);
+    throw error;
+  }
+};

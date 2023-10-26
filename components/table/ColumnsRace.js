@@ -38,32 +38,30 @@ export const columns = [
     {
       id: "action",
       cell: ({row}) => {
-        const race = row.original
-        const raceName = race.nom
+        const raceRow = row.original
+        const raceName = raceRow.nom
         
         return (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button varian='ghost'className="h-8 w-8 p-0 bg-slate-100 hover:bg-slate-200">
-               <MoreHorizontal className="h-4 w-4 text-gray-700" />
+              <Button varian='ghost'className="h-8 w-8 p-0 h-8 w-8 p-0 bg-[#222222] text-[#ffffff] hover:bg-[#28ccac]">
+               <MoreHorizontal className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-            <DropdownMenuLabel>action</DropdownMenuLabel>
-            <DropdownMenuItem
-            onClick={()=>{
-              navigator.clipboard.writeText(raceName.toString())
-            }}
-            >
-              copy categorie Name
-            </DropdownMenuItem>
-            <DropdownMenuItem
-            onClick={()=>{
-              //navigator.clipboard.writeText(animalName.toString())
-            }}
-            >
-              Modifier
-            </DropdownMenuItem>
+            <button
+              onClick={()=>{
+                navigator.clipboard.writeText(raceRow.nom)
+              }}
+              className=" mb-2 h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white" 
+              variant="ghost">
+              copier nom 
+            </button>
+            <button
+              className=" h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white" 
+              variant="ghost">
+              Modifier 
+            </button>
             </DropdownMenuContent>
           </DropdownMenu>
         )
