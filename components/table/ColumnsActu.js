@@ -322,7 +322,7 @@ function CellComponent({ row }) {
               <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
                   <DialogTitle>Edit Actu</DialogTitle>
-                  <DialogDescription>Modifier l'actualité ici.</DialogDescription>
+                  <DialogDescription>Modifier l&apos;actualité ici.</DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                   <div className="grid grid-cols-4 items-center gap-4">
