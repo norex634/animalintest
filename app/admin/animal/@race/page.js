@@ -1,4 +1,4 @@
-import { columns } from '@/components/table/ColumnsRace'
+import { Columns } from '@/components/table/ColumnsRace'
 import { DataTable } from '@/components/table/DataTableRace'
 import { GetFetchRaces } from '@/utils/fetch/Race'
 import React from 'react'
@@ -16,7 +16,7 @@ const AnimalPageRace = async () => {
       <h1 className="text-[1.5em] font-semibold">Liste des races</h1>
       <div className=" flex flex-col w-full text-[#222222] ">
        
-      <DataTable columns={columns} data={races} pageval={pageval} />
+      <DataTable columns={Columns} data={races} pageval={pageval} />
       </div>
         
       

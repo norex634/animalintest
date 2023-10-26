@@ -1,6 +1,6 @@
 import React from 'react'
 import { DataTable } from '@/components/table/DataTableUser'
-import { columns} from '@/components/table/ColumnsUser'
+import { Columns} from '@/components/table/ColumnsUser'
 import { GetFetchUsers } from '@/utils/fetch/User'
 
 
@@ -17,7 +17,7 @@ const UserPage = async () => {
       <h1 className="text-[1.5em] font-semibold">Liste des Admin</h1>
       <div className=" flex flex-col w-full text-[#222222] ">
        
-      <DataTable columns={columns} data={users} pageval={pageval} />
+      <DataTable columns={Columns} data={users} pageval={pageval} />
       </div>
         
       

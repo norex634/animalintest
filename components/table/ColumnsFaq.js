@@ -25,7 +25,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
 
-export const columns = [
+export const Columns = [
   {
     accessorKey: "question",
     header: ({ column }) => {

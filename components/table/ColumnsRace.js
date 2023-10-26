@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link"
 
-export const columns = [
+export const Columns = [
     {
       accessorKey: "nom",
       header: ({ column }) => {

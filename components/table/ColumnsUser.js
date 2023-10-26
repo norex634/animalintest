@@ -26,7 +26,7 @@ import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
 
 // This type is used to define the shape of our data.
-export const columns = [
+export const Columns = [
   {
     accessorKey: "nom",
     header: ({ column }) => {

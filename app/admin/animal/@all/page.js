@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { DataTable } from '@/components/table/DataTableAnimal'
-import { columns } from '@/components/table/ColumnsAnimal'
+import { Columns } from '@/components/table/ColumnsAnimal'
 import { GetFetchAnimaux } from '@/utils/fetch/Animal'
 import {GetFetchRaces} from '@/utils/fetch/Race'
 import {GetFetchCategorieAnimaux} from '@/utils/fetch/CategorieAnimal'
@@ -24,7 +24,7 @@ const AnimalPage = async () => {
       <h1 className="text-[1.5em] font-semibold">Liste des animaux</h1>
       <div className=" flex flex-col w-full ">
        
-      <DataTable columns={columns} data={animaux} pageval={pageval} race={races} sexe={sexes} categorie={categoriesAnimaux} />
+      <DataTable columns={Columns} data={animaux} pageval={pageval} race={races} sexe={sexes} categorie={categoriesAnimaux} />
       </div>
         
       

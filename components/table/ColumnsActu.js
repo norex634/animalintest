@@ -31,7 +31,7 @@ import { Input } from "@/components/ui/input"
 import { ModifActu } from "./ModifActu"
 
 
-export const columns = [
+export const Columns = [
   {
     accessorKey: "titre",
     header: ({ column }) => {

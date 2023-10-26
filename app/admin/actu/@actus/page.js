@@ -1,6 +1,6 @@
 import React from 'react'
 import { DataTable } from '@/components/table/DataTableActu'
-import { columns } from '@/components/table/ColumnsActu'
+import { Columns } from '@/components/table/ColumnsActu'
 import { GetFetchActus } from '@/utils/fetch/Actu'
 import { GetFetchCategorieActus } from '@/utils/fetch/CategorieActu'
 
@@ -18,7 +18,7 @@ const ActusPage = async () => {
       <h1 className="text-[1.5em] font-semibold">Liste des actualitées</h1>
       <div className=" flex flex-col w-full text-[#222222] ">
        
-      <DataTable columns={columns} data={actus} pageval={pageval} categorieactu={categoriesActus} />
+      <DataTable columns={Columns} data={actus} pageval={pageval} categorieactu={categoriesActus} />
       </div>
         
       

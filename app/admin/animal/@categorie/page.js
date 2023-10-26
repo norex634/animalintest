@@ -1,6 +1,6 @@
 
 import { DataTable } from '@/components/table/DataTableCategorieAnimal'
-import { columns } from '@/components/table/ColumnsCategorieAnimal'
+import { Columns } from '@/components/table/ColumnsCategorieAnimal'
 import { GetFetchCategorieAnimaux } from '@/utils/fetch/CategorieAnimal'
 
 const AnimalPageCategorie = async ({}) => {
@@ -13,7 +13,7 @@ const AnimalPageCategorie = async ({}) => {
       <h1 className="text-[1.5em] font-semibold">Liste des catégorie</h1>
       <div className=" flex flex-col w-full text-[#222222] ">
        
-      <DataTable columns={columns} data={categoriesAnimaux} pageval={pageval} />
+      <DataTable columns={Columns} data={categoriesAnimaux} pageval={pageval} />
       </div>
         
       

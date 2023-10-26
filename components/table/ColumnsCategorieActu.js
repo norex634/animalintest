@@ -24,7 +24,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-export const columns = [
+export const Columns = [
   {
     accessorKey: "nom",
     header: ({ column }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { DataTable } from '@/components/table/DataTableFaq'
-import { columns } from '@/components/table/ColumnsFaq'
+import { Columns } from '@/components/table/ColumnsFaq'
 import { GetFetchFaqs } from '@/utils/fetch/Faq'
 
 
@@ -14,7 +14,7 @@ const FaqPage = async () => {
       <h1 className="text-[1.5em] font-semibold">Liste des FAQ</h1>
       <div className=" flex flex-col w-full text-[#222222] ">
        
-      <DataTable columns={columns} data={faqs} pageval={pageval} />
+      <DataTable columns={Columns} data={faqs} pageval={pageval} />
       </div>
         
       
