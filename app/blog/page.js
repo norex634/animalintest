@@ -66,7 +66,7 @@ const Blog = () => {
  <div className="relative flex w-full border border-t rounded bg-bg2 text-white">
     <div className="flex flex-col w-full p-[1em] gap-2">
         <div className="flex gap-2">
-            <img className='w-5 ' src="/logo.png" width={20} height={20}  alt="" />
+            <Image className='w-5 ' src="/logo.png" width={20} height={20}  alt="" />
             <h1 className='underline decoration-ac font-bold text-[1em]'>Animalin</h1>
         </div>
         <div className="flex flex-col">
