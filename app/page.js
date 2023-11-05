@@ -1,5 +1,6 @@
 'use client'
 import React,{useState,useEffect} from "react"
+import Image from 'next/image'
 import Nav from "@/components/partials/Nav"
 import { Button } from "@/components/ui/button"
 import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -59,7 +60,9 @@ export default function HomePage() {
           {/* card */}
           <div className="flex flex-col gap-8 justify-center pt-4 md:flex-col lg:flex-row items-center">
             <div className="card bg-base-100 shadow-xl lg:w-[25%] w-[70%]">
-              <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+              <figure>
+                <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
+                </figure>
                 <div className="card-body text-sec">
                   <h2 className="card-title">Nala</h2>
                   <p>Nala est arrivée au refuge après avoir été trouvée sur la voie publique … </p>
@@ -72,7 +75,7 @@ export default function HomePage() {
                       <DialogDescription className="text-sec ">
                         <div className="flex flex-col lg:flex-row gap-4 items-center">
                           <div className="lg:w-[20vw]">
-                          <img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Nala" />
+                          <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
                           </div>
                           <div className="lg:w-[30vw] flex flex-col lg:flex-col gap-2">
                             <div className="flex flex-row gap-2">
@@ -98,7 +101,7 @@ export default function HomePage() {
             </div>
             {/* card */}
             <div className="card bg-base-100 shadow-xl lg:w-[25%] w-[70%]">
-              <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+              <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" /></figure>
                 <div className="card-body text-black">
                   <h2 className="card-title">Nala</h2>
                   <p>Nala est arrivée au refuge après avoir été trouvée sur la voie publique … </p>
@@ -111,7 +114,7 @@ export default function HomePage() {
                       <DialogDescription className="text-sec ">
                         <div className="flex flex-col lg:flex-row gap-4 items-center">
                           <div className="lg:w-[20vw]">
-                          <img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Nala" />
+                          <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
                           </div>
                           <div className="lg:w-[30vw] flex flex-col lg:flex-col gap-2">
                             <div className="flex flex-row gap-2">
@@ -137,7 +140,7 @@ export default function HomePage() {
             </div>
             {/* card */}
             <div className="card bg-base-100 shadow-xl lg:w-[25%] w-[70%]">
-              <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+              <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" /></figure>
                 <div className="card-body text-black">
                   <h2 className="card-title">Nala</h2>
                   <p>Nala est arrivée au refuge après avoir été trouvée sur la voie publique … </p>
@@ -150,7 +153,7 @@ export default function HomePage() {
                       <DialogDescription className="text-[#222222] ">
                         <div className="flex flex-col lg:flex-row gap-4 items-center">
                           <div className="lg:w-[20vw]">
-                          <img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Nala" />
+                          <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
                           </div>
                           <div className="lg:w-[30vw] flex flex-col lg:flex-col gap-2">
                             <div className="flex flex-row gap-2">
@@ -190,12 +193,12 @@ export default function HomePage() {
           <div className="lg:w-[15%] lg:min-h-[260px] w-[80%] md:w-[80%] group border border-txt hover:border-ac rounded-[1em] text-center text-txt p-4">
             <FontAwesomeIcon className="text-[5em] group-hover:text-ac" icon={faHandshakeAngle} />
             <h1 className="text-[1.2em] text-center pb-4 mt-4">Sauvetages</h1>
-            <p className="text-[0.8em] text-center">Notre association prend en charge chaque année plusieurs centaines d'animaux.</p>
+            <p className="text-[0.8em] text-center">Notre association prend en charge chaque année plusieurs centaines d`&apos;`animaux.</p>
           </div>
           <div className="lg:w-[15%] w-[80%] md:w-[80%] lg:min-h-[260px] group border border-txt hover:border-ac rounded-[1em] text-center text-txt p-4">
             <FontAwesomeIcon className="text-[5em] group-hover:text-ac" icon={faGraduationCap} />
             <h1 className="text-[1.2em] text-center pb-4 mt-4">Education</h1>
-            <p className="text-[0.8em] text-center">Nous promouvons l'animal dans la société à travers l'éducation et la sensibilisation.</p>
+            <p className="text-[0.8em] text-center">Nous promouvons l`&apos;`animal dans la société à travers l`&apos;`éducation et la sensibilisation.</p>
           </div>
           <div className="lg:w-[15%] w-[80%] md:w-[80%] lg:min-h-[260px] group border border-txt hover:border-ac rounded-[1em] text-center text-txt p-4">
             <FontAwesomeIcon className="text-[5em] group-hover:text-ac" icon={faBook} />

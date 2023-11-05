@@ -2,6 +2,7 @@ import Footer from '@/components/partials/Footer'
 import Header from '@/components/partials/Header'
 import Nav from '@/components/partials/Nav'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 import React from 'react'
 
 const Blog = () => {
@@ -19,7 +20,7 @@ const Blog = () => {
 <div className="relative flex w-full border border-t rounded bg-bg2 text-white">
     <div className="flex flex-col w-full p-[1em] gap-2">
         <div className="flex gap-2">
-            <img className='w-5 ' src="logo.png" alt="" />
+            <Image className='w-5 ' width={20} height={20} src="/logo.png" alt="" />
             <h1 className='underline decoration-ac font-bold text-[1em]'>Animalin</h1>
         </div>
         <div className="flex flex-col">
@@ -42,7 +43,7 @@ const Blog = () => {
 <div className="relative flex w-full border border-t rounded bg-bg2 text-white">
     <div className="flex flex-col w-full p-[1em] gap-2">
         <div className="flex gap-2">
-            <img className='w-5 ' src="logo.png" alt="" />
+            <Image className='w-5 ' width={20} height={20} src="/logo.png" alt="" />
             <h1 className='underline decoration-ac font-bold text-[1em]'>Animalin</h1>
         </div>
         <div className="flex flex-col">
@@ -65,7 +66,7 @@ const Blog = () => {
  <div className="relative flex w-full border border-t rounded bg-bg2 text-white">
     <div className="flex flex-col w-full p-[1em] gap-2">
         <div className="flex gap-2">
-            <img className='w-5 ' src="logo.png" alt="" />
+            <img className='w-5 ' src="/logo.png" width={20} height={20}  alt="" />
             <h1 className='underline decoration-ac font-bold text-[1em]'>Animalin</h1>
         </div>
         <div className="flex flex-col">

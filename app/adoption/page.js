@@ -34,6 +34,8 @@ import {faBars,faHandshakeAngle,faGraduationCap,faBook,faBell} from '@fortawesom
 import Nav from "@/components/partials/Nav"
 import Header from "@/components/partials/Header"
 import Footer from "@/components/partials/Footer"
+import Image from "next/image"
+
 export default function HomePage() {
 
 
@@ -104,7 +106,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8" >
                     {/* card 1  */}
                     <div className="card card-compact bg-base-100 shadow-xl">
-                        <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+                        <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Shoes!</h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -115,7 +117,7 @@ export default function HomePage() {
                     </div>
                     {/* card 1  */}
                     <div className="card card-compact bg-base-100 shadow-xl">
-                        <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+                        <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Shoes!</h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -126,7 +128,7 @@ export default function HomePage() {
                     </div>
                     {/* card 1  */}
                     <div className="card card-compact bg-base-100 shadow-xl">
-                        <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+                        <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Shoes!</h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -137,7 +139,7 @@ export default function HomePage() {
                     </div>
                     {/* card 1  */}
                     <div className="card card-compact bg-base-100 shadow-xl">
-                        <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+                        <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Shoes!</h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -148,7 +150,7 @@ export default function HomePage() {
                     </div>
                     {/* card 1  */}
                     <div className="card card-compact bg-base-100 shadow-xl">
-                        <figure><img src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" alt="Shoes" /></figure>
+                        <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Shoes!</h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
