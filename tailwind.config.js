@@ -17,6 +17,9 @@ module.exports = {
     },
     
     extend: {
+      backgroundImage: {
+        'bg-main' : 'https://www.chromethemer.com/download/hd-wallpapers/dog-nose-2560x1440.jpg'
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -51,12 +54,12 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        'text-dark': '#FCFCFD',
-        'bg-sun': '##F7F8F6',
-        'bg2-dark' : '#EFF0EE',
-        'prim-dark': '#28CCAC',
-        'sec-dark': '#084439',
-        'ac-dark': '#28CCAC',
+        'bg': '#222A2A',
+        'bg2': '#293131',
+        'txt' : '#ECEAEB',
+        'prim': '#424B4D',
+        'sec': '#0E1111',
+        'ac': '#28CCAC',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -79,5 +82,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),require("daisyui")],
 }
