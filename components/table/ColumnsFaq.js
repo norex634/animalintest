@@ -24,7 +24,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
-
+//h
 function CellComponent({ row }) {
   const faqRow = row.original
   const faqQuestion = faqRow.question
