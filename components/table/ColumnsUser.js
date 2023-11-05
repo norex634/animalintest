@@ -95,7 +95,7 @@ function CellComponent({ row }) {
         <DialogHeader>
           <DialogTitle>Edit User</DialogTitle>
           <DialogDescription>
-            Modiffier L'user ici.
+            Modiffier L`&apos;`user ici.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
