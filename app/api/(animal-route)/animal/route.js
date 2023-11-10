@@ -13,10 +13,10 @@ export async function GET(req, res) {
     orderBy: {
         dateArrive: "desc", // Triez par date d'arrivée de la plus récente à la plus ancienne
       },
-    // skip: offset, // Ignorer les éléments jusqu'à l'offset
+    
     take: 3, // Récupérer seulement le nombre d'éléments spécifié par la limite
   });
-  // console.log(animaux)
+   console.log(animaux)
 
     if (!animaux) {
        return NextResponse.json({ animaux: [] }, { status: 200 });

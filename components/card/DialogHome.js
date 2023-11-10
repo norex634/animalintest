@@ -11,9 +11,7 @@ import {
   import { Button } from "@/components/ui/button"
   import Image from 'next/image'
 
-const DialogHome = (
-{animal}
-) => {
+const DialogHome = ({animal}) => {
     let currentAnimal = null;
     let age = 0;
 
@@ -38,13 +36,16 @@ const DialogHome = (
         return adjustedAge;
       };
   return (
-    <>
-<Dialog className="">
-                      <DialogTrigger className="btn bg-ac text-txt">Open</DialogTrigger>
-                      <DialogContent className="lg:min-w-[54%] min-w-[90%] bg-txt ">
+    
+                <Dialog className="">
+                    <DialogTrigger className="btn bg-ac text-txt">
+                      Info
+                    </DialogTrigger>
+                    <DialogContent className="lg:min-w-[54%] min-w-[90%] bg-txt ">
                       <DialogHeader>
-                      <DialogTitle className="text-center mb-4">{animal.nom}</DialogTitle>
-                      <DialogDescription className="text-sec ">
+                        <DialogTitle className="text-center mb-4">{animal.nom}</DialogTitle>
+                        <DialogDescription className="">
+                        </DialogDescription>
                         <div className="flex flex-col lg:flex-row gap-4 items-center">
                           <div className="lg:w-[20vw]">
                           <div className="carousel w-full">
@@ -63,25 +64,29 @@ const DialogHome = (
                           </div>
                           <div className="lg:w-[30vw] flex flex-col lg:flex-col gap-2">
                             <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">{animal.nom}</span></p>
-                              <p><span className="text-[1.5em]"></span > {animal.race.nom}</p>
+                              <div><span className="text-[1.5em]">{animal.nom}</span></div>
+                              <div><span className="text-[1.5em]"></span > {animal.race.nom}</div>
                             </div>
                             <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">{animal.sexe.nom}</span> <span>{
-                                                currentAnimal !== animal ? (
-                                                    <>
-                                                    {
-                                                        calculateAge(animal.naissance) === 0 ? (
-                                                        <span> de moins d&apos;un an</span>
-                                                        ) : (
-                                                        <span> de {calculateAge(animal.naissance)} ans</span>
-                                                        )
-                                                    }
-                                                    </>
-                                                ) : (
-                                                    <span>{age} ans</span>
-                                                )
-                                                }</span></p>
+                                <div>
+                                  <span className="text-[1.5em]">
+                                    {animal.sexe.nom}
+                                  </span> 
+                                  <span>{
+                                    currentAnimal !== animal ? (
+                                      <>
+                                        {
+                                            calculateAge(animal.naissance) === 0 ? (
+                                              <span> de moins d&apos;un an</span>
+                                              ) : (
+                                              <span> de {calculateAge(animal.naissance)} ans</span>
+                                        )}
+                                      </>
+                                        ) : (
+                                          <span>{age} ans</span>
+                                        )
+                                  }</span>
+                                  </div>
                             </div>
                             <div className="w-full">
                             <p>
@@ -90,11 +95,11 @@ const DialogHome = (
                             </div>
                           </div>
                         </div>
-                      </DialogDescription>
+                      
                       </DialogHeader>
                       </DialogContent>
                       </Dialog>
-    </>
+    
   )
 }
 

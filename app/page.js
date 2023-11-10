@@ -16,11 +16,12 @@ export default async function HomePage() {
     
     const treeLastAnimals = await GetFetchAnimaux3();
     const animaux = treeLastAnimals.animaux;
+    console.log(animaux)
 
     
 
   return (
-      <>
+      
       <main className="bg-bg min-h-screen">
         <Header />
         <Nav />
@@ -105,6 +106,6 @@ export default async function HomePage() {
     {/* footer */}
     <Footer />
   </main>
-</>
+
   )
 }
