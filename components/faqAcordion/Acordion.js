@@ -13,13 +13,12 @@ const Acordion = (faq) => {
     console.log(MaFaq)
   return (
   
-<Accordion key={MaFaq.id} type="single" collapsible>
-  <AccordionItem key={MaFaq.id} value="item-1">
-    <AccordionTrigger className="text-[1em] text-left" >{MaFaq.question}</AccordionTrigger>
-    <AccordionContent className="max-w-full">
+<Accordion  type="single" collapsible>
+  <AccordionItem key={`item-${MaFaq.id}`} value="item-1">
+    <AccordionTrigger className="text-[1em] text-left" key={`trigger-${MaFaq.id}`} >{MaFaq.question}</AccordionTrigger>
+    <AccordionContent key={`content-${MaFaq.id}`} className="max-w-full ">
     {MaFaq.reponse && <span>{MaFaq.reponse}</span>}
-    {MaFaq.link && MaFaq.link !== 'Link' && <span><Link key={MaFaq.id} className='text-ac' href={MaFaq.link}> Plus d&apos;informations ici</Link></span>}
-      
+    {MaFaq.link && MaFaq.link !== 'Link' && <span><Link className='text-ac' href={MaFaq.link}> Plus d&apos;informations ici</Link></span>}
     </AccordionContent>
   </AccordionItem>
 </Accordion>
