@@ -21,12 +21,12 @@ const Faq = async () => {
                 {
                 faqs.map((faq) => (
                   
+                    <div key={faq.id} className="div">
 
-                    <Acordion faqs={faq} />
+                      <Acordion faqs={faq} />
+                    </div>
                   
-                ))
-                
-                }
+                ))}
                 
             </div>
         </div>
