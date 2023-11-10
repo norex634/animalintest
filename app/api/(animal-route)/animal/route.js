@@ -14,7 +14,7 @@ export async function GET(req, res) {
         dateArrive: "desc", // Triez par date d'arrivée de la plus récente à la plus ancienne
       },
     
-    take: 3, // Récupérer seulement le nombre d'éléments spécifié par la limite
+    // take: 3, // Récupérer seulement le nombre d'éléments spécifié par la limite
   });
    console.log(animaux)
 
