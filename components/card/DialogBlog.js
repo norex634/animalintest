@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import {
     Dialog,
     DialogContent,
@@ -18,7 +19,7 @@ const DialogBlog = ({actu}) => {
     <>
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-ac hover:bg-txt hover:text-ac">Plus d'info</Button>
+        <Button className="bg-ac hover:bg-txt hover:text-ac">Plus d&apos;info</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] md:max-w-[70%] lg:maw-w-[50%]">
         <DialogHeader>
@@ -31,14 +32,14 @@ const DialogBlog = ({actu}) => {
             <div className="flex flex-col lg:flex-row justify-center lg:justify-start max-h-[90%] w-full lg:gap-4 ">
                 <div className="carousel w-full lg:w-[50%]">
                     <div id="slide1" className="carousel-item relative w-full">
-                    <img src="https://picsum.photos/400/400" className="w-full" />
+                    <Image priority="priority" width={600} height={600} alt="1" src="https://picsum.photos/400/400" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide4" className="btn btn-circle">❮</a> 
                     <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
                 </div> 
                 <div id="slide2" className="carousel-item relative w-full">
-                    <img src="https://picsum.photos/400/400" className="w-full" />
+                    <Image priority="priority" src="https://picsum.photos/400/400" width={600} height={600} alt="2" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide1" className="btn btn-circle">❮</a> 
                     <a href="#slide3" className="btn btn-circle">❯</a>

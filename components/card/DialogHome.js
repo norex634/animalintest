@@ -51,7 +51,7 @@ const DialogHome = (
                             {
                               animal.image.map((img, index) => (
                                 <div id={`slide${index}`} className="carousel-item relative w-full" key={img.id}>
-                                    <img src={img.img} className="w-full" />
+                                    <Image priority="priority" width={600} height={600} alt={img.id} src={img.img} className="w-full" />
                                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                     <a href={`#slide${index === 0 ? animal.image.length - 1 : index - 1}`} className="btn btn-circle">❮</a> 
                                     <a href={`#slide${index === animal.image.length - 1 ? 0 : index + 1}`} className="btn btn-circle">❯</a>
@@ -72,7 +72,7 @@ const DialogHome = (
                                                     <>
                                                     {
                                                         calculateAge(animal.naissance) === 0 ? (
-                                                        <span> de moins d'un an</span>
+                                                        <span> de moins d&apos;un an</span>
                                                         ) : (
                                                         <span> de {calculateAge(animal.naissance)} ans</span>
                                                         )

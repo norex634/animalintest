@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import {GetFetchAnimaux} from "@/utils/fetch/Animal"
 import { useRouter,usePathname,useSearchParams } from 'next/navigation'
 
-const MoreAnimals = async (
+const MoreAnimals = (
     page,
     limit
 ) => {
@@ -26,7 +26,7 @@ const MoreAnimals = async (
   return (
     <>
     <Button className='bg-ac mt-2 w-[25%]' onClick={loadMoreAnimaux}>
-                More animals
+                Plus d&apos;anaimaux
     </Button>
     </>
   )

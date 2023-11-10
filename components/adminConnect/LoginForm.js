@@ -74,13 +74,13 @@ const LoginForm = () => {
           </h1>
 
           <p className="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
-          L'endroit où chaque coeur palpite de bonheur ! 
+          L&apos;endroit où chaque coeur palpite de bonheur ! 
           
           </p>
 
           <p className="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
           
-          En tant q'administrateur de ce refuge, vous avez le pouvoir de changer la vie des animaux. C'est ici que se trouvent les amis à quatre pattes en attente d'une famille aimante, et les héros de l'ombre qui font de ce refuge un lieu spécial.
+          En tant q&apos;administrateur de ce refuge, vous avez le pouvoir de changer la vie des animaux. C&apos;est ici que se trouvent les amis à quatre pattes en attente d&apos;une famille aimante, et les héros de l&apos;ombre qui font de ce refuge un lieu spécial.
           </p>
         </div>
 

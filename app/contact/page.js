@@ -83,7 +83,7 @@ async function onsubmit() {
                                 
                                     <div className="flex justify-center w-full pt-2">
                                         <div className="flex flex-col">
-                                            <span>Chaussée de l'animal 68,</span>
+                                            <span>Chaussée de l&apos;animal 68,</span>
                                             <span>1000 Bruxelles</span>
                                         </div>
                                         
@@ -146,7 +146,7 @@ async function onsubmit() {
                                         <span className=''> 
                                             Pour signaler un cas de maltraitance ou de négligence animale: sba@animalin.be.
                                             Veuillez être le plus complet possible et indiquer les coordonnées exactes du propriétaire. Anonymat garanti.
-                                            Vous pouvez également consulter la rubrique FAQ pour plus d'informations.
+                                            Vous pouvez également consulter la rubrique FAQ pour plus d&apos;informations.
                                         </span>
                                     </div>
                                 </div>

@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import Image from 'next/image'
 const DialogAdoption = ({animal}) => {
     let currentAnimal = null;
     let age = 0;
@@ -46,7 +47,7 @@ const DialogAdoption = ({animal}) => {
     <>
     <Dialog>
                             <DialogTrigger asChild>
-                                <Button className="btn btn-primary border-transparent bg-ac hover:bg-transparent hover:border-ac hover:border hover:text-ac">plus d'info</Button>
+                                <Button className="btn btn-primary border-transparent bg-ac hover:bg-transparent hover:border-ac hover:border hover:text-ac">plus d&apos;info</Button>
                             </DialogTrigger>
                             <DialogContent className="sm:max-w-[50%]">
                             <DialogHeader>
@@ -59,7 +60,7 @@ const DialogAdoption = ({animal}) => {
                                             {
                                             animal.image.map((img, index) => (
                                                 <div id={`slide${index}`} className="carousel-item relative w-full" key={img.id}>
-                                                    <img src={img.img} className="w-full" />
+                                                    <Image priority="priority" width={600} height={600} src={img.img} alt={img.id} className="w-full" />
                                                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                                     <a href={`#slide${index === 0 ? animal.image.length - 1 : index - 1}`} className="btn btn-circle">❮</a> 
                                                     <a href={`#slide${index === animal.image.length - 1 ? 0 : index + 1}`} className="btn btn-circle">❯</a>
@@ -83,7 +84,7 @@ const DialogAdoption = ({animal}) => {
                                                     <>
                                                     {
                                                         calculateAge(animal.naissance) === 0 ? (
-                                                        <span>moins d'un an</span>
+                                                        <span>moins d&apos;un an</span>
                                                         ) : (
                                                         <span>{calculateAge(animal.naissance)} ans</span>
                                                         )

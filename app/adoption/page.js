@@ -59,7 +59,7 @@ export default async function HomePage({
             <div className="grid grid-cols-1">
                 {fetchAnimaux?.length === 0 ? (
                     <div className="grid place-items-center h-[60vh] ">
-                        <p className="text-[2em]">Désolé nous n'avons pas trouvé d'animal avec cette recherche</p>
+                        <p className="text-[2em]">Désolé nous n&apos;avons pas trouvé d&apos;animal avec cette recherche</p>
                     </div> 
                 ) : ( 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 mt-8 "> 
