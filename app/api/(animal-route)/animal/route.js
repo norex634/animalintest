@@ -5,9 +5,9 @@ export async function GET(req, res) {
 
     const animaux = await prisma.Animal.findMany({
       
-      // orderBy: {
-      //   dateArrive: 'desc', // Triez par date d'arrivée de la plus récente à la plus ancienne
-      // },
+      orderBy: {
+        dateArrive: 'desc', // Triez par date d'arrivée de la plus récente à la plus ancienne
+      },
       include: {
         categorie: true,
         sexe: true,
@@ -16,7 +16,7 @@ export async function GET(req, res) {
       },
       
     
-    // take: 3, // Récupérer seulement le nombre d'éléments spécifié par la limite
+      take: 3, // Récupérer seulement le nombre d'éléments spécifié par la limite
   });
   console.log(animaux)
 

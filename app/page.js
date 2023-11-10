@@ -4,19 +4,19 @@ import Image from 'next/image'
 import Nav from "@/components/partials/Nav"
 import { Button } from "@/components/ui/button"
 import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBars,faHandshakeAngle,faGraduationCap,faBook,faBell} from '@fortawesome/free-solid-svg-icons'
+import {faHandshakeAngle,faGraduationCap,faBook,faBell} from '@fortawesome/free-solid-svg-icons'
 
 import Footer from "@/components/partials/Footer"
 import Header from "@/components/partials/Header"
-import { GetFetchAnimaux3 } from "@/utils/fetch/Animal3"
 import Link from "next/link"
 import DialogHome from "@/components/card/DialogHome"
+// import { GetFetchAnimaux3 } from "@/utils/fetch/Animal3"
 
 export default async function HomePage() {
     
-    const treeLastAnimals = await GetFetchAnimaux3();
-    const animaux = treeLastAnimals.animaux;
-    console.log(animaux)
+    // const treeLastAnimals = await GetFetchAnimaux3();
+    // const animaux = treeLastAnimals.animaux;
+    // console.log(animaux)
 
     
 
@@ -50,7 +50,7 @@ export default async function HomePage() {
           <h1 className="text-[2em] underline text-txtL decoration-ac pt-6">Nos derniers arrivants</h1>
           {/* card */}
           <div className="grid grid-cols-1 lg:grid-cols-3 mx-[15%] mt-8 lg:gap-8">
-          {animaux.map((animal) => (
+          {/* {animaux.map((animal) => (
           <>
             <div className="card h-[90%] bg-base-100 shadow-xl">
               <figure>
@@ -66,7 +66,7 @@ export default async function HomePage() {
                 </div>
             </div>
           </>
-        ))}  
+        ))}   */}
           {/* fermeture de la card */}
           </div>
           
