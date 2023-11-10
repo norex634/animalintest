@@ -55,7 +55,7 @@ module.exports = {
         'txt' : '#ECEAEB',
         'prim': '#424B4D',
         'sec': '#0E1111',
-        'accent' : '#8B7E85',
+        'accent' : '#28CCAC',
         'ac': '#28CCAC',
         //Light
         "bgL" : '#D5DDDD',

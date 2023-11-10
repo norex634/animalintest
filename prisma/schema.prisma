@@ -31,7 +31,7 @@ model Social {
 model Compagnie {
   id     Int    @id @default(autoincrement())
   nom    String @db.VarChar(255)
-  logo   String? @db.VarChar(255)
+  logo   String? @db.Text
   slogan String? @db.VarChar(255)
   tel    String @db.VarChar(255)
   lieu   String @db.VarChar(255)

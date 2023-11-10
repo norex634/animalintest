@@ -51,7 +51,7 @@ const DialogAdoption = ({animal}) => {
                             </DialogTrigger>
                             <DialogContent className="sm:max-w-[50%]">
                             <DialogHeader>
-                            <DialogTitle className="text-center text-[2em]">{animal.nom}</DialogTitle>
+                            <DialogTitle className="text-center text-[2em]">{animal.nom} / {animal.sexe.nom}</DialogTitle>
                             </DialogHeader>
                                 <div className="flex flex-col lg:flex-row gap-2 ">
                                     <div className="flex justify-center max-h-[90%] w-full ">

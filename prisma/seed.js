@@ -8,8 +8,8 @@ const { seedactu } = require("./seedactu.js");
 const { seedcompagnie } = require("./seedcompagnie.js");
 const { seedfaq } = require("./seedfaq.js");
 
-seedanimal();
-seeduser();
-seedactu();
+//seedanimal();
+//seeduser();
+//seedactu();
 seedcompagnie();
-seedfaq();
+//seedfaq();
