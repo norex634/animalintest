@@ -12,9 +12,9 @@ const Acordion = (faq) => {
     const MaFaq = faq.faqs
     console.log(MaFaq)
   return (
-    <>
-<Accordion type="single" collapsible>
-  <AccordionItem  value="item-1">
+  
+<Accordion key={MaFaq.id} type="single" collapsible>
+  <AccordionItem key={MaFaq.id} value="item-1">
     <AccordionTrigger className="text-[1em] text-left" >{MaFaq.question}</AccordionTrigger>
     <AccordionContent className="max-w-full">
     {MaFaq.reponse && <span>{MaFaq.reponse}</span>}
@@ -23,7 +23,7 @@ const Acordion = (faq) => {
     </AccordionContent>
   </AccordionItem>
 </Accordion>
-    </>
+    
   )
 }
 
