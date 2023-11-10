@@ -108,6 +108,7 @@ export function DataTable({
         for (const file of images) {
           formData.append('files', file);
         }
+        
 
         // Effectuez une requête POST à l'API
     await PostAnimal(formData);

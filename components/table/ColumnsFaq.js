@@ -1,7 +1,7 @@
 "use client"
 import React, { useState,useEffect } from "react"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
-import {GetFetchFaqs, PatchFaq} from "@/utils/fetch/Faq"
+import {GetFetchFaqs, PatchFaq, DeleteFaq} from "@/utils/fetch/Faq"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -43,6 +43,11 @@ function CellComponent({ row }) {
     setIsOpenFaq(true)
   }
 
+  const ondelete = async () => {
+    await DeleteFaq(faqId);
+    router.refresh();
+  }
+
    // Fonction pour gérer le clic sur le bouton "Ajouter"
    async function onsubmit() {
     if (question && reponse && link && faqId) {
@@ -77,7 +82,7 @@ function CellComponent({ row }) {
           }}
           className=" mb-2 h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white" 
           variant="ghost">
-          copier Link 
+          copier le lien 
         </button>
 
         <Dialog >
@@ -86,7 +91,7 @@ function CellComponent({ row }) {
       onClick={buttonClick}
       className="h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white" 
       variant="ghost">
-      Edit FAQ
+      Modifier la FAQ
     </button>
   </DialogTrigger>
   {isOpenFaq && (
@@ -140,7 +145,13 @@ function CellComponent({ row }) {
   )}
   
 </Dialog>
-
+<button
+            onClick={ondelete}
+            className="h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white"
+            variant="ghost"
+          >
+            Supprimer
+          </button>
       </DropdownMenuContent>
     </DropdownMenu>
    </>

@@ -39,3 +39,55 @@ export const PostCategorieAnimal = async (data) => {
     throw error;
   }
 };
+
+export const PatchCategorieAnimal = async (data) => {
+  try {
+    const response = await fetch(`/api/categories-animaux`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.status === 200) {
+      // La création a réussi, vous pouvez gérer la réponse ici
+      const responseData = await response.json();
+      return responseData;
+    // } else {
+    //   // Une erreur s'est produite lors de la création
+    //   const errorData = await response.json();
+    //   console.log('Erreur lors de la création de la catégorie :', errorData.message);
+    //   throw new Error('Erreur lors de la création de la catégorie : ' + errorData.message);
+    }
+  } catch (error) {
+    console.log('Erreur lors de la modification du type :', error.message);
+    throw error;
+  }
+};
+
+export const DeleteCategorieAnimal = async (data) => {
+  try {
+    const response = await fetch(`/api/categories-animaux?${data}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.status === 200) {
+      // La création a réussi, vous pouvez gérer la réponse ici
+      const responseData = await response.json();
+      return responseData;
+    // } else {
+    //   // Une erreur s'est produite lors de la création
+    //   const errorData = await response.json();
+    //   console.log('Erreur lors de la création de la catégorie :', errorData.message);
+    //   throw new Error('Erreur lors de la création de la catégorie : ' + errorData.message);
+    }
+  } catch (error) {
+    console.log('Erreur lors de la modification du type :', error.message);
+    throw error;
+  }
+};

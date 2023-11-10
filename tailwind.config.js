@@ -15,11 +15,7 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    
     extend: {
-      backgroundImage: {
-        'bg-main' : 'https://www.chromethemer.com/download/hd-wallpapers/dog-nose-2560x1440.jpg'
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -59,7 +55,17 @@ module.exports = {
         'txt' : '#ECEAEB',
         'prim': '#424B4D',
         'sec': '#0E1111',
+        'accent' : '#8B7E85',
         'ac': '#28CCAC',
+        //Light
+        "bgL" : '#D5DDDD',
+        "bg2L" : '#CED6D6',
+        "txtL" : '#151314',
+        "primL" : '#B2BBBD',
+        "secL" : '#EEF1F1',
+        "accentL" : '#81747B',
+        "acL" : '#28CCAC',
+        
       },
       borderRadius: {
         lg: "var(--radius)",

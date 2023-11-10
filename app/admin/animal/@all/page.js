@@ -11,7 +11,7 @@ import {GetFetchSexes} from '@/utils/fetch/Sexe'
 
 
 const AnimalPage = async () => {
-  const {animaux} = await GetFetchAnimaux()
+  const {animaux} = await GetFetchAnimaux({})
   const pageval = 10
   const {races} = await GetFetchRaces()
   const {sexes} = await GetFetchSexes()

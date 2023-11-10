@@ -20,13 +20,18 @@
 // export default LayoutAdmin
 
 import SideAdmin from "@/components/partials/SideAdmin";
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
-const LayoutAdmin = ({ children, Layoutside }) => {
+const LayoutAdmin = async ({ children, Layoutside }) => {
+  
+  const session = await getServerSession(authOptions)
+  
   return (
     <div className="flex min-h-screen bg-[#f1f1f1] relative">
       <div className="w-[12%] min-h-screen">
         <div className="fixed h-full w-[12%] p-4">
-          <SideAdmin />
+          <SideAdmin session={session} />
         </div>
       </div>
 

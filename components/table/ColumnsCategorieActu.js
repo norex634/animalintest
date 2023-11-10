@@ -1,7 +1,7 @@
 "use client"
 import React, { useState,useEffect } from "react"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
-import {GetFetchCategorieActus, PatchCategorieActu} from "@/utils/fetch/CategorieActu"
+import {GetFetchCategorieActus, PatchCategorieActu, DeleteCategorieActu} from "@/utils/fetch/CategorieActu"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -39,6 +39,12 @@ function CellComponent({ row }) {
     await categories()
     setIsOpenCat(true)
   }
+
+  const ondelete = async () => {
+    await DeleteCategorieActu(catActuId);
+    router.refresh();
+  }
+
   // Fonction pour gérer le clic sur le bouton "Ajouter"
   async function onsubmit() {
     if (nom && catActuId) {
@@ -69,12 +75,14 @@ function CellComponent({ row }) {
 
         <button
           onClick={()=>{
-            navigator.clipboard.writeText(actuName)
+            navigator.clipboard.writeText(catActuName)
           }}
           className=" mb-2 h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white" 
           variant="ghost">
           copier nom 
         </button>
+
+        
 
         <Dialog >
   <DialogTrigger asChild>
@@ -113,6 +121,13 @@ function CellComponent({ row }) {
   )}
   
 </Dialog>
+<button
+            onClick={ondelete}
+            className="h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white"
+            variant="ghost"
+          >
+            Supprimer
+          </button>
 
       </DropdownMenuContent>
     </DropdownMenu>

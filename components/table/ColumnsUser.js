@@ -1,7 +1,7 @@
 "use client"
 import React, { useState,useEffect } from "react"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
-import {GetFetchUsers,PatchUser} from "@/utils/fetch/User"
+import {GetFetchUsers,PatchUser,DeleteUser} from "@/utils/fetch/User"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -42,6 +42,11 @@ function CellComponent({ row }) {
       const buttonClick = async () => {
         await users()
         setIsOpenUser(true)
+      }
+
+      const ondelete = async () => {
+        await DeleteUser(userId);
+        router.refresh();
       }
       // Fonction pour gérer le clic sur le bouton "Ajouter"
       async function onsubmit() {
@@ -157,6 +162,13 @@ function CellComponent({ row }) {
       
     </Dialog>
 
+    <button
+            onClick={ondelete}
+            className="h-10 w-full p-0 hover:bg-[#28ccac] hover:text-white"
+            variant="ghost"
+          >
+            Supprimer
+          </button>
           </DropdownMenuContent>
         </DropdownMenu>
       </>

@@ -1,7 +1,6 @@
 import './globals.css'
 import Provider from './provider'
 
-import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata = {
   title: 'Animalin',

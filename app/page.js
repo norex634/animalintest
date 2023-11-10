@@ -1,38 +1,23 @@
-'use client'
-import React,{useState,useEffect} from "react"
+
+import React from "react"
 import Image from 'next/image'
 import Nav from "@/components/partials/Nav"
 import { Button } from "@/components/ui/button"
 import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars,faHandshakeAngle,faGraduationCap,faBook,faBell} from '@fortawesome/free-solid-svg-icons'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+
 import Footer from "@/components/partials/Footer"
 import Header from "@/components/partials/Header"
-export default function HomePage() {
-    //scoll 
-    const [isScrolled, setIsScrolled] = useState(false);
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 0) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(false);
-        }
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-  
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
+import { GetFetchAnimaux3 } from "@/utils/fetch/Animal3"
+import Link from "next/link"
+import DialogHome from "@/components/card/DialogHome"
+
+export default async function HomePage() {
+    
+    const treeLastAnimals = await GetFetchAnimaux3();
+    const animaux = treeLastAnimals.animaux;
+
+    
 
   return (
       <>
@@ -48,146 +33,50 @@ export default function HomePage() {
                 <h1 className="lg:text-[4em] md:text-[6em] text-[4em] pt-[3em] md:pt-[0.7em] md:text-center lg:text-left  text-center font-bold text-txt">Un meilleur <span className="text-ac">avenir</span></h1>
                 <p className=" text-txt text-[1.5em] text-center py-4 lg:text-left">Offrons-leur une seconde chance</p>
               <div className="text-center md:pt-[2em] pt-[6em] lg:text-left">
-                <Button className="border-ac bg-transparent text-ac hover:text-white hover:bg-ac" variant="outline">Découvrir notre refuge</Button>
+                <Button className="border-ac bg-transparent text-ac hover:text-white hover:bg-ac" variant="outline">
+                  <Link href="/about">Découvrir notre refuge</Link>
+                </Button>
+                
+                  
               </div>
               </div>
             </div>
         </div>
 
         {/* new animal */}
-        <div className="flex max-w-screen bg-txt text-txt lg:p-[3em] flex-col items-center pb-[120px]">
-          <h1 className="text-[2em] underline text-[#030707] decoration-ac">Nos derniers Arrivants</h1>
+        
+        <div className="flex max-w-screen bg-bgL text-txtL lg:p-[3em] flex-col items-center pb-8 md:pb-14">
+          <h1 className="text-[2em] underline text-txtL decoration-ac pt-6">Nos derniers arrivants</h1>
           {/* card */}
-          <div className="flex flex-col gap-8 justify-center pt-4 md:flex-col lg:flex-row items-center">
-            <div className="card bg-base-100 shadow-xl lg:w-[25%] w-[70%]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 mx-[15%] mt-8 lg:gap-8">
+          {animaux.map((animal) => (
+          <>
+            <div className="card h-[90%] bg-base-100 shadow-xl">
               <figure>
-                <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
-                </figure>
+              <Image priority="priority" src={animal.image[0].img} width={600} height={600} alt={animal.image[0].id} />
+                
+              </figure>
                 <div className="card-body text-sec">
-                  <h2 className="card-title">Nala</h2>
-                  <p>Nala est arrivée au refuge après avoir été trouvée sur la voie publique … </p>
+                  <h2 className="card-title">{animal.nom}</h2>
+                  <p>{animal.descrShort}</p>
                   <div className="card-actions justify-end">
-                    <Dialog className="">
-                      <DialogTrigger className="btn bg-ac text-txt">Open</DialogTrigger>
-                      <DialogContent className="lg:min-w-[54%] bg-txt ">
-                      <DialogHeader>
-                      <DialogTitle className="text-center mb-4">Nala</DialogTitle>
-                      <DialogDescription className="text-sec ">
-                        <div className="flex flex-col lg:flex-row gap-4 items-center">
-                          <div className="lg:w-[20vw]">
-                          <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
-                          </div>
-                          <div className="lg:w-[30vw] flex flex-col lg:flex-col gap-2">
-                            <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">Nala</span></p>
-                              <p><span className="text-[1.5em]"></span > Berger Malinois</p>
-                            </div>
-                            <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">Femelle</span> <span>de 2 ans</span></p>
-                            </div>
-                            <div className="w-full">
-                            <p>
-                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia commodi saepe tempora odit quae cumque sed, iure perspiciatis doloremque, culpa ipsa accusantium 
-                            </p>
-                            </div>
-                          </div>
-                        </div>
-                      </DialogDescription>
-                      </DialogHeader>
-                      </DialogContent>
-                      </Dialog>
+                    <DialogHome animal={animal} />
                   </div>
                 </div>
             </div>
-            {/* card */}
-            <div className="card bg-base-100 shadow-xl lg:w-[25%] w-[70%]">
-              <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" /></figure>
-                <div className="card-body text-black">
-                  <h2 className="card-title">Nala</h2>
-                  <p>Nala est arrivée au refuge après avoir été trouvée sur la voie publique … </p>
-                  <div className="card-actions justify-end">
-                    <Dialog className="">
-                      <DialogTrigger className="btn bg-ac text-white">Open</DialogTrigger>
-                      <DialogContent className="lg:min-w-[54%] bg-txt ">
-                      <DialogHeader>
-                      <DialogTitle className="text-center mb-4">Nala</DialogTitle>
-                      <DialogDescription className="text-sec ">
-                        <div className="flex flex-col lg:flex-row gap-4 items-center">
-                          <div className="lg:w-[20vw]">
-                          <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
-                          </div>
-                          <div className="lg:w-[30vw] flex flex-col lg:flex-col gap-2">
-                            <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">Nala</span></p>
-                              <p><span className="text-[1.5em]"></span > Berger Malinois</p>
-                            </div>
-                            <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">Femelle</span> <span>de 2 ans</span></p>
-                            </div>
-                            <div className="w-full">
-                            <p>
-                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia commodi saepe tempora odit quae cumque sed, iure perspiciatis doloremque, culpa ipsa accusantium 
-                            </p>
-                            </div>
-                          </div>
-                        </div>
-                      </DialogDescription>
-                      </DialogHeader>
-                      </DialogContent>
-                      </Dialog>
-                  </div>
-                </div>
-            </div>
-            {/* card */}
-            <div className="card bg-base-100 shadow-xl lg:w-[25%] w-[70%]">
-              <figure><Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" /></figure>
-                <div className="card-body text-black">
-                  <h2 className="card-title">Nala</h2>
-                  <p>Nala est arrivée au refuge après avoir été trouvée sur la voie publique … </p>
-                  <div className="card-actions justify-end">
-                    <Dialog className="">
-                      <DialogTrigger className="btn bg-ac text-white">Open</DialogTrigger>
-                      <DialogContent className="lg:min-w-[54%] bg-[#ffffffa3] ">
-                      <DialogHeader>
-                      <DialogTitle className="text-center mb-4">Nala</DialogTitle>
-                      <DialogDescription className="text-[#222222] ">
-                        <div className="flex flex-col lg:flex-row gap-4 items-center">
-                          <div className="lg:w-[20vw]">
-                          <Image src="https://www.spalalouviere.be/wp-content/uploads/2019/11/272594154_10226572695932574_6645465709592935901_n-820x528.jpg" width={600} height={100}  alt="Shoes" />
-                          </div>
-                          <div className="lg:w-[30vw] flex flex-col lg:flex-col gap-2">
-                            <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">Nala</span></p>
-                              <p><span className="text-[1.5em]"></span > Berger Malinois</p>
-                            </div>
-                            <div className="flex flex-row gap-2">
-                              <p><span className="text-[1.5em]">Femelle</span> <span>de 2 ans</span></p>
-                            </div>
-                            <div className="w-full">
-                            <p>
-                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia commodi saepe tempora odit quae cumque sed, iure perspiciatis doloremque, culpa ipsa accusantium 
-                            </p>
-                            </div>
-                          </div>
-                        </div>
-                      </DialogDescription>
-                      </DialogHeader>
-                      </DialogContent>
-                      </Dialog>
-                  </div>
-                </div>
-            </div>
-            
+          </>
+        ))}  
           {/* fermeture card */}
           </div>
-          <Button className="border-ac bg-ac hover:bg-transparent text-txt hover:text-ac  mt-10" variant="outline">Voir tous nos colocataire</Button>
+          
+          <Button className="border-ac w-[70%] lg:w-[20%] bg-ac hover:bg-transparent text-txt hover:text-ac " variant="outline">
+          <Link href="/adoption">Voir tous nos colocataires</Link></Button>
         </div>
 
-      <div className="flex-col max-w-screen px-[5em] pt-[2em] pb-[3em] bg-bg">
+      <div className="flex-col max-w-screen px-[5em] pt-[2em] pb-[3em] bg-bg2">
         <div className="text-txt text-center">
           <h1 className="text-[2em] text-ac">Nos actions</h1>
-          <p className="mt-3">Depuis 1972, nous travaillons au quotidien pour améliorer le bien-être animal.
-          Des actions concrètes et nombreuses pour défendre leur intérêts.</p>
+          <p className="mt-3">Depuis 1972, nous œuvrons quotidiennement à améliorer le bien-être animal. Des actions concrètes et nombreuses sont entreprises pour défendre leurs intérêts.</p>
         </div>
         <div className="flex lg:flex-row lg:justify-center gap-8 mt-6 flex-col items-center">
           <div className="lg:w-[15%] lg:min-h-[260px] w-[80%] md:w-[80%] group border border-txt hover:border-ac rounded-[1em] text-center text-txt p-4">

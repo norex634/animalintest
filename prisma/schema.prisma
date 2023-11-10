@@ -17,7 +17,7 @@ model Horaire {
   h1   DateTime @default(now()) @db.Timestamp(0)
   h2   DateTime @default(now()) @db.Timestamp(0)
   compagnieId Int?
-  compagnie    Compagnie? @relation(fields: [compagnieId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  compagnie    Compagnie? @relation(fields: [compagnieId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Social {
@@ -25,7 +25,7 @@ model Social {
   nom  String @db.VarChar(255)
   link String @db.VarChar(255)
   compagnieId Int?
-  compagnie    Compagnie? @relation(fields: [compagnieId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  compagnie    Compagnie? @relation(fields: [compagnieId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Compagnie {
@@ -54,7 +54,7 @@ model CategorieActu {
   slug String @unique @db.VarChar(100)
   nom String @db.VarChar(255)
   img String? @db.VarChar(255)
-  actu Actu[]
+  actu Actu[]  
 }
 
 model Actu {
@@ -64,7 +64,7 @@ model Actu {
   descr String?   @db.Text
   date  DateTime @default(now()) @db.Timestamp(0)
   categorieId Int
-  categorie CategorieActu @relation(fields:[categorieId], references: [id], onDelete: NoAction)
+  categorie CategorieActu @relation(fields:[categorieId], references: [id],onUpdate: Cascade, onDelete: Cascade)
 }
 
 // animal 
@@ -94,7 +94,7 @@ model Images {
   img String @db.VarChar(255)
   publicId String? @db.VarChar(255)
   animalId Int
-  animal        Animal      @relation(fields: [animalId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  animal        Animal      @relation(fields: [animalId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Animal {
@@ -108,9 +108,9 @@ model Animal {
   dateArrive DateTime @default(now()) @db.Timestamp(0)
   descrShort String   @db.VarChar(255)
   descr      String   @db.Text
-  categorie   CategorieAnimal? @relation(fields: [categorieId], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  sexe        Sexe?      @relation(fields: [sexeId], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  race        Race?      @relation(fields: [raceId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  categorie   CategorieAnimal? @relation(fields: [categorieId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  sexe        Sexe?      @relation(fields: [sexeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  race        Race?      @relation(fields: [raceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   image Images[]
 }
 
