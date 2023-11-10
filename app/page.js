@@ -66,7 +66,7 @@ export default async function HomePage() {
             </div>
           </>
         ))}  
-          {/* fermeture card */}
+          {/* fermeture de la card */}
           </div>
           
           <Button className="border-ac w-[70%] lg:w-[20%] bg-ac hover:bg-transparent text-txt hover:text-ac " variant="outline">
