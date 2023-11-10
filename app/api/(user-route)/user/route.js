@@ -8,7 +8,7 @@ import { getToken } from "next-auth/jwt"
 
 export async function PATCH(req, res) {
   const token = await getToken({ req })
-  console.log("token : ",token)
+  // console.log("token : ",token)
   if (token) {
     const session = await getServerSession();
     if (session && session.userId) {

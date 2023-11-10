@@ -26,7 +26,7 @@ export async function GET(req, res) {
 
 export async function POST(req, res) {
   const token = await getToken({ req })
-  console.log("token : ",token)
+  // console.log("token : ",token)
   if (token) {
   const {nom,prenom,email,password} = await req.json();
   const hashedpassword = await bcrypt.hash(password,10)
@@ -53,7 +53,7 @@ export async function POST(req, res) {
 
 export async function PATCH(req, res) {
   const token = await getToken({ req })
-  console.log("token : ",token)
+  // console.log("token : ",token)
   if (token) {
     const {nom, prenom, email, role,userId}  = await req.json();
     
@@ -80,7 +80,7 @@ export async function PATCH(req, res) {
 
     export async function DELETE(req, res) {
       const token = await getToken({ req })
-      console.log("token : ",token)
+      // console.log("token : ",token)
       if (token) {
         const data  = await req.json();
         

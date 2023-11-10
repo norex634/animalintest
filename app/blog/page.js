@@ -10,7 +10,7 @@ import DialogBlog from '@/components/card/DialogBlog'
 
 const Blog = async () => {
     const {actus}  = await GetFetchActus();
-    console.log(actus);
+    // console.log(actus);
 
     const rawDate = '2023-10-20T23:46:53.000Z';
     const formattedDate = new Date(rawDate).toLocaleDateString('en-US', {

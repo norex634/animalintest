@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 const Acordion = (faq) => {
     const MaFaq = faq.faqs
-    console.log(MaFaq)
+    // console.log(MaFaq)
   return (
   
 <Accordion  type="single" collapsible>

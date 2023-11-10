@@ -16,9 +16,9 @@ export async function GET(req, res) {
       },
       
     
-    take: 3, // Récupérer seulement le nombre d'éléments spécifié par la limite
+    // take: 3, // Récupérer seulement le nombre d'éléments spécifié par la limite
   });
-   console.log(animaux)
+  console.log(animaux)
 
     if (!animaux) {
        return NextResponse.json({ animaux: [] }, { status: 200 });
