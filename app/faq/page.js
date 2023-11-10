@@ -20,10 +20,10 @@ const Faq = async () => {
                 <h1 className="lg:text-[2em] text-[1.5em] text-center ">Notre liste de question réponse</h1>
                 {
                 faqs.map((faq) => (
-                  <div className="">
+                  
 
                     <Acordion faqs={faq} />
-                  </div>
+                  
                 ))
                 
                 }
